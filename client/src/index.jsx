@@ -1,14 +1,19 @@
 import React from 'react';
-
+import ReactDOM from 'react-dom';
+import People from './components/people/People.jsx';
 class App extends React.Component{
-  constructo(props){
+  constructor(props){
     super(props);
   }
 
   render(){
     return(
-      <div>hello</div>
-    )
+      <div>
+        Im rendering
+        <People />
+
+      </div>
+)
   }
-}
-ReactDOM.render(<App/>, document.getElementById('app'))
+
+}ReactDOM.render(<App/>, document.getElementById('app'))
