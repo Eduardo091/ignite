@@ -8,7 +8,8 @@ class CapLetter extends React.Component{
       text:''
     }
     this.getCaps=this.getCaps.bind(this);
-    this.capTitle=this.capTitle.bind(this);
+    this.capTitle=this.capFirstLetters.bind(this);
+    this.capFirstOfSentence=this.capFirstOfSentence.bind(this);
   }
     getCaps(){
     $.ajax({
@@ -22,12 +23,20 @@ class CapLetter extends React.Component{
      }
     })
     }
-    capTitle(str) {
+    capFirstLetters(str) {
      var string = str.toLowerCase().split(' ');
      for (var i = 0; i < string.length; i++) {
       string[i] = string[i].charAt(0).toUpperCase() + string[i].substring(1);
   }
   return string.join(' ');
+};
+
+   capFirstOfSentence(str) {
+    var string = str.toLowerCase().split('. ');
+    for (var i = 0; i < string.length; i++) {
+     string[i] = string[i].charAt(0).toUpperCase() + string[i].substring(1);
+}
+return string.join('. ');
 };
 componentDidMount(){
   this.getCaps()
@@ -37,7 +46,11 @@ componentDidMount(){
     return(
       <div className='Letters'>
         Rendering titled Letters
-          <li>{this.capTitle(this.state.title)}</li>
+          <li>{this.capFirstLetters(this.state.title)}<br/></li>
+          <li>{this.capFirstOfSentence(this.state.text)}</li>
+
+
+
       </div>
     )
   }
