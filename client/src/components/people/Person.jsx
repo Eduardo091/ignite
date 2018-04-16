@@ -4,8 +4,9 @@ const Person = (props)=>(
   <div className='person'>
         <li>
         {props.person.first_name}
-        props.person.last_name}
-        props.person.birth_date}</li>
+        {props.person.last_name}
+        {props.person.birth_date}
+      </li>
 
   </div>
 )
