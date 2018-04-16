@@ -1,7 +1,7 @@
 import React from 'react';
 const Number =(props)=>(
   <div className='Number'>
-   {props.isItPrime(props.number.number)}
+  <li> {props.isItPrime(props.number.number)} </li>
   </div>
 )
 export default Number
